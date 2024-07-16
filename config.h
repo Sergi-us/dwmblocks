@@ -3,7 +3,7 @@
 // Sergius angepasste version
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	/*{"",	"sb-pacpackages",	5,	8},*/
+	{"",	"sb-pacpackages",	5,	8},
 	/* {"", "sb-kbselect", 0, 30}, */
 	{"", "cat /tmp/recordingicon 2>/dev/null",	0,	9},
 	{"",	"sb-tasks",	10,	26},
