@@ -1,39 +1,39 @@
-//Modify this file to change what commands output to your statusbar, and recompile using the make command.
-// ~/.local/bin/dwmblock/config.h
-// Sergius angepasste version
+// Ändere diese Datei, um zu ändern, was die Befehle in deiner Statusleiste ausgeben, und kompiliere sie erneut mit dem Befehl "make".
+// SARBS 0.7
+
 static const Block blocks[] = {
-	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	{"",	"sb-pacpackages",	5,	8},
-	/* {"", "sb-kbselect", 0, 30}, */
-	{"", "cat /tmp/recordingicon 2>/dev/null",	0,	9},
-	{"",	"sb-tasks",	10,	26},
-	/* {"",	"sb-music",	0,	11}, */
-	{"",	"sb-news",		0,	6},
-	/* {"",	"sb-price xmr-btc \"Monero to Bitcoin\"  25",	9000,	25}, */
-	/* {"",	"sb-price xmr Monero  24",			9000,	24}, */
-	/* {"",	"sb-price eth Ethereum  23",			9000,	23}, */
-	/* {"",	"sb-price btc Bitcoin  21",			9000,	21}, */
-	{"",	"sb-torrent",	20,	7},
-	/* {"",	"sb-memory",	10,	14}, */
-	/* {"",	"sb-cpu",	10,	18}, */
-	/* {"",	"sb-moonphase",	18000,	17}, */
-	{"",	"sb-doppler",	0,	13},
-	/* {"",	"sb-forecast",	18000,	5}, */
-	{"",	"sb-mailbox",	180,	12},
-	/* {"",	"sb-nettraf",	1,	16}, */
-	{"",	"sb-volume",	0,	10},
-	{"",	"sb-battery",	5,	3},
-	{"",	"sb-clock",	60,	1},
-	{"",	"sb-internet",	5,	4},
-	/* {"",	"sb-iplocate", 0,	27}, */
-	/* {"",	"sb-help-icon",	0,	15}, */
+	/* Symbol */	/* Befehl */		/* Intervall */		/* Aktualisierungssignal */
+	{"",		"sb-pacpackages",	0,			8},
+	/* {"",	"sb-kbselect",		0, 			30}, */
+	{"", 		"cat /tmp/recordingicon 2>/dev/null",	0,	9},
+	{"",		"sb-tasks",		10,			26},
+	/* {"",		"sb-music",		0,			11}, */
+	{"",		"sb-news",		300,			6},
+	/* {"",		"sb-price xmr-btc \"Monero to Bitcoin\"  25",	9000,	25}, */
+	/* {"",		"sb-price xmr Monero  24",			9000,	24}, */
+	/* {"",		"sb-price eth Ethereum  23",			9000,	23}, */
+	/* {"",		"sb-price btc Bitcoin  21",			9000,	21}, */
+	/*{"",		"sb-torrent",		20,			7}, */
+	/* {"",		"sb-memory",		10,			14}, */
+	/* {"",		"sb-cpu",		10,			18}, */
+	/*{"",		"sb-moonphase",		18000,			17}, */
+	/* {"",		"sb-doppler",		0,			13}, */
+	/* {"",		"sb-forecast",		18000,			5}, */
+	{"",		"sb-mailbox",		180,			12},
+	{"",		"sb-nettraf",		1,			16},
+	{"",		"sb-volume",		0,			10},
+	{"",		"sb-battery",		5,			3},
+	{"",		"sb-clock",		60,			1},
+	{"",		"sb-internet",		5,			4},
+	/* {"",		"sb-iplocate", 		0,			27}, */
+	{"",		"sb-help-icon",		0,			15},
 };
 
-//Sets delimiter between status commands. NULL character ('\0') means no delimiter.
+// Setzt das Trennzeichen zwischen Statusbefehlen. Das NULL-Zeichen ('\0') bedeutet kein Trennzeichen.
 static char *delim = " ";
 
-// Have dwmblocks automatically recompile and run when you edit this file in
-// vim with the following line in your vimrc/init.vim:
+// Lasse dwmblocks automatisch neu kompilieren und ausführen, wenn du diese Datei in
+// vim mit der folgenden Zeile in deiner vimrc/init.vim bearbeitest:
 
 // autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
 
