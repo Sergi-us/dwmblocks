@@ -3,12 +3,13 @@
 
 static const Block blocks[] = {
 	/* Symbol */	/* Befehl */		/* Intervall */		/* Aktualisierungssignal */
+	{"",		"sb-backup",		0,			20},
 	{"",		"sb-pacpackages",	0,			8},
 	/* {"",	"sb-kbselect",		0, 			30}, */
 	{"", 		"cat /tmp/recordingicon 2>/dev/null",	0,	9},
 	{"",		"sb-tasks",		10,			26},
 	/* {"",		"sb-music",		0,			11}, */
-	{"",		"sb-news",		300,			6},
+	{"",		"sb-news",		600,			6},
 	/* {"",		"sb-price xmr-btc \"Monero to Bitcoin\"  25",	9000,	25}, */
 	/* {"",		"sb-price xmr Monero  24",			9000,	24}, */
 	/* {"",		"sb-price eth Ethereum  23",			9000,	23}, */
