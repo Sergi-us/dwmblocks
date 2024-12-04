@@ -9,8 +9,8 @@ static const Block blocks[] = {
 	{"",		"sb-handy",		60,			20},
 	{"",		"sb-clock",		60,			1},
 	{"",		"sb-moonphase",		18000,			17},
-	/* {"",		"sb-pacpackages",	0,			8}, */
-	/* {"",	"sb-kbselect",		0, 			30}, */
+	{"",		"sb-pacpackages",	0,			8},
+	{"",	"sb-kbselect",		0, 			30},
 	{"",		"sb-tasks",		10,			26},
 	{"",		"sb-music",		0,			11},
 	{"",		"sb-news",		600,			6},
@@ -18,17 +18,17 @@ static const Block blocks[] = {
 	/* {"",		"sb-price xmr Monero  24",			9000,	24}, */
 	/* {"",		"sb-price eth Ethereum  23",			9000,	23}, */
 	/* {"",		"sb-price btc Bitcoin  21",			9000,	21}, */
-	/*{"",		"sb-torrent",		20,			7}, */
-	/* {"",		"sb-memory",		10,			14}, */
-	/* {"",		"sb-cpu",		10,			18}, */
-	/* {"",		"sb-doppler",		0,			13}, */
-	/* {"",		"sb-forecast",		18000,			5}, */
-	/* {"",		"sb-mailbox",		180,			12}, */
+	{"",		"sb-torrent",		20,			7},
+	{"",		"sb-memory",		10,			14},
+	{"",		"sb-cpu",		10,			18},
+	{"",		"sb-doppler",		0,			13},
+	{"",		"sb-forecast",		18000,			5},
+	{"",		"sb-mailbox",		180,			12},
 	{"",		"sb-volume",		0,			10},
 	{"",		"sb-battery",		5,			3},
 	{"",		"sb-internet",		5,			4},
 	{"",		"sb-nettraf",		1,			16},
-	{"",		"sb-iplocate", 		60,			15},
+	/* {"",		"sb-iplocate", 		60,			15}, */
 };
 
 // Setzt das Trennzeichen zwischen Statusbefehlen. Das NULL-Zeichen ('\0') bedeutet kein Trennzeichen.
