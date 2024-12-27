@@ -7,7 +7,7 @@ static const Block blocks[] = {
 {"",        "sb-help-icon",             60,                 15},
 {"",        "sb-backup",                60,                 20},
 {"",        "sb-handy",                 60,                 20},
-{"",        "sb-clock",                 60,                 1},
+/* {"",        "sb-clock",                 60,                 1}, */
 /* {"",     "sb-moonphase",             18000,              17}, */
 {"",        "sb-pacpackages",           0,                  8},
 {"",        "sb-tasks",                 10,                 26},
@@ -19,9 +19,9 @@ static const Block blocks[] = {
 /* {"",     "sb-price btc Bitcoin  21",    9000,           21}, */
 {"",        "sb-torrent",               20,                 7},
 {"",        "sb-memory",                10,                 14},
-{"",        "sb-cpu",                   10,                 18},
+/* {"",     "sb-cpu",                   10,                 18}, */
 /* {"",     "sb-doppler",               0,                  13}, */
-{"",        "sb-forecast",              18000,              5},
+/* {"",     "sb-forecast",              18000,              5}, */
 {"",        "sb-mailbox",               180,                12},
 {"",        "sb-volume",                0,                  10},
 {"",        "sb-battery",               5,                  3},
@@ -32,7 +32,7 @@ static const Block blocks[] = {
 };
 
 // Setzt das Trennzeichen zwischen Statusbefehlen. Das NULL-Zeichen ('\0') bedeutet kein Trennzeichen.
-static char *delim = "|";
+static char *delim = " ";
 
 // Lasse dwmblocks automatisch neu kompilieren und ausführen, wenn du diese Datei in
 // vim mit der folgenden Zeile in deiner vimrc/init.vim bearbeitest:
