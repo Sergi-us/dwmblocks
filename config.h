@@ -4,10 +4,8 @@
 static const Block blocks[] = {
 /* Symbol */    /* Befehl */        /* Intervall */ /* Aktualisierungssignal */
 {"",        "cat /tmp/recordingicon 2>/dev/null",   0,      9},
-{"",        "sb-help-icon",             60,                 15},
 {"",        "sb-backup",                60,                 20},
-{"",        "sb-handy",                 60,                 20},
-/* {"",        "sb-clock",                 60,                 1}, */
+{"",        "sb-help-icon",             60,                 15},
 /* {"",     "sb-moonphase",             18000,              17}, */
 {"",        "sb-pacpackages",           0,                  8},
 {"",        "sb-tasks",                 10,                 26},
@@ -20,6 +18,8 @@ static const Block blocks[] = {
 {"",        "sb-torrent",               20,                 7},
 {"",        "sb-memory",                10,                 14},
 /* {"",     "sb-cpu",                   10,                 18}, */
+/* {"",     "sb-disk",                   10,                 18}, */
+/* {"",     "sb-cpubars",               10,                    18}, */
 /* {"",     "sb-doppler",               0,                  13}, */
 /* {"",     "sb-forecast",              18000,              5}, */
 {"",        "sb-mailbox",               180,                12},
@@ -27,8 +27,9 @@ static const Block blocks[] = {
 {"",        "sb-battery",               5,                  3},
 {"",        "sb-internet",              5,                  4},
 {"",        "sb-nettraf",               1,                  16},
-/* {"",     "sb-iplocate",              60,                 15}, */
 /* {"",     "sb-kbselect",              0,                  30}, */
+{" ",        "sb-clock",                 60,                 1},
+{"",        "sb-iplocate",              60,                 15},
 };
 
 // Setzt das Trennzeichen zwischen Statusbefehlen. Das NULL-Zeichen ('\0') bedeutet kein Trennzeichen.
