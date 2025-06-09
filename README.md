@@ -1,44 +1,88 @@
 # dwmblocks
 
-Modular status bar for dwm written in c.
+Modulare Statusbar für dwm (geschrieben in C)
 
-# Modifying blocks
+## Blöcke modifizieren
 
-The statusbar is made from text output from commandline programs.  Blocks are
-added and removed by editing the config.h file.
+Die Statusbar wird aus Textausgaben von Kommandozeilen-Programmen erstellt. Blöcke werden durch Bearbeitung der `config.h` Datei hinzugefügt und entfernt.
 
-# Luke's build
+### Blöcke aktivieren/deaktivieren
 
-I have dwmblocks read my preexisting scripts
-[here in my dotfiles repo](https://github.com/LukeSmithxyz/voidrice/tree/master/.local/bin/statusbar).
-So if you want my build out of the box, download those and put them in your
-`$PATH`. I do this to avoid redundancy in LARBS, both i3 and dwm use the same
-statusbar scripts.
+Um einzelne Module zu aktivieren oder zu deaktivieren, bearbeite die `config.h` Datei:
 
-# Signaling changes
+**Aktivieren:** Entferne die `/*` und `*/` Kommentarzeichen vor und nach der entsprechenden Zeile:
+```c
+// Deaktiviert:
+/*  {"",    "sb-mailbox",               3600,               20},    */
 
-Most statusbars constantly rerun every script every several seconds to update.
-This is an option here, but a superior choice is giving your module a signal
-that you can signal to it to update on a relevant event, rather than having it
-rerun idly.
+// Aktiviert:
+    {"",    "sb-mailbox",               3600,               20},
+```
 
-For example, the audio module has the update signal 10 by default.  Thus,
-running `pkill -RTMIN+10 dwmblocks` will update it.
+**Deaktivieren:** Füge `/*` am Anfang und `*/` am Ende der Zeile hinzu:
+```c
+// Aktiviert:
+    {"",    "sb-bluetooth",             0,                  31},
 
-You can also run `kill -44 $(pidof dwmblocks)` which will have the same effect,
-but is faster.  Just add 34 to your typical signal number.
+// Deaktiviert:
+/*  {"",    "sb-bluetooth",             0,                  31},    */
+```
 
-My volume module *never* updates on its own, instead I have this command run
-along side my volume shortcuts in dwm to only update it when relevant.
+Nach jeder Änderung muss dwmblocks neu kompiliert werden:
+```bash
+sudo make install && { killall -q dwmblocks; setsid dwmblocks & }
+```
 
-Note that all modules must have different signal numbers.
+## Sergi's Build
 
-# Clickable modules
+Ich verwende dwmblocks mit meinen eigenen Skripten aus meinem [dotfiles Repository](https://github.com/Sergi-us/dotfiles/tree/main/.local/bin/statusbar). Wenn du mein Setup verwenden möchtest, lade diese Skripte herunter und platziere sie in deinem `$PATH`. Dies vermeidet Redundanz - sowohl i3 als auch dwm verwenden dieselben Statusbar-Skripte.
 
-Like i3blocks, this build allows you to build in additional actions into your
-scripts in response to click events.  See the above linked scripts for examples
-of this using the `$BLOCK_BUTTON` variable.
+## Signale für Aktualisierungen
 
-For this feature to work, you need the appropriate patch in dwm as well. See
-[here](https://dwm.suckless.org/patches/statuscmd/).
-Credit for those patches goes to Daniel Bylinka (daniel.bylinka@gmail.com).
+Die meisten Statusbars führen alle paar Sekunden alle Skripte erneut aus. Das ist hier möglich, aber besser ist es, deinen Modulen ein Signal zu geben, um sie bei relevanten Ereignissen zu aktualisieren, anstatt sie ständig laufen zu lassen.
+
+Beispiel: Das Audio-Modul hat standardmäßig das Update-Signal 21. Durch Ausführung von `pkill -RTMIN+21 dwmblocks` wird es aktualisiert.
+
+Du kannst auch `kill -55 $(pidof dwmblocks)` ausführen, was denselben Effekt hat, aber schneller ist. Addiere einfach 34 zu deiner üblichen Signalnummer.
+
+Mein Volume-Modul aktualisiert sich *niemals* von selbst. Stattdessen führe ich diesen Befehl zusammen mit meinen Lautstärke-Shortcuts in dwm aus, um es nur bei Bedarf zu aktualisieren.
+
+**Wichtig:** Alle Module müssen unterschiedliche Signalnummern haben.
+
+## Klickbare Module
+
+Wie bei i3blocks ermöglicht dieser Build zusätzliche Aktionen in deinen Skripten als Reaktion auf Klick-Ereignisse. Siehe die oben verlinkten Skripte für Beispiele mit der `$BLOCK_BUTTON` Variable.
+
+Damit diese Funktion funktioniert, benötigst du den entsprechenden Patch in dwm. Siehe [hier](https://dwm.suckless.org/patches/statuscmd/).
+
+## Fehlerbehebung
+
+**Problem:** Die gesamte Statusbar wird nicht angezeigt
+**Ursache:** Ein einzelnes Modul funktioniert nicht korrekt oder das entsprechende Programm ist nicht installiert
+
+**Lösung:**
+1. Deaktiviere verdächtige Module (besonders Hardware-spezifische wie Bluetooth, wenn keine Hardware vorhanden)
+2. Teste Module einzeln durch temporäres Deaktivieren anderer
+3. Überprüfe, ob alle benötigten Programme installiert sind
+4. Kontrolliere die Logs mit `journalctl -f` während dwmblocks läuft
+
+**Häufige Problemverursacher:**
+- `sb-bluetooth` - wenn keine Bluetooth-Hardware vorhanden (standardmäßig deaktiviert)
+- `sb-battery` - bei Desktop-Systemen ohne Akku
+- `sb-internet` - bei fehlender Netzwerkverbindung
+- `sb-mailbox` - wenn E-Mail-Konfiguration fehlt
+
+**Tipp:** Beginne mit einer minimalen Konfiguration und füge Module schrittweise hinzu.
+
+## Automatische Neukompilierung
+
+Für automatische Neukompilierung bei Änderungen an der `config.h` füge diese Zeile in deine vimrc/init.vim ein:
+
+```vim
+autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+```
+
+## Credits
+
+Basiert auf dwmblocks mit Anpassungen.
+Clickable modules Patches von Daniel Bylinka (daniel.bylinka@gmail.com).
