@@ -1,8 +1,6 @@
 // Ändere diese Datei, um zu ändern, was die Befehle in deiner Statusleiste ausgeben, und kompiliere sie erneut mit dem Befehl "make".
-// ## 2025-01-16 Hintergrundbilder sollen sich ändern
+// ##TODO 2025-01-16 Hintergrundbilder sollen sich ändern
 // Aktualisierungssignal muss unterschiedlich sein!
-//
-// test zum bla bla
 
 static const Block blocks[] = {
 /* Symbol */ /* Befehl */               /* Intervall */     /* Aktualisierungssignal */
