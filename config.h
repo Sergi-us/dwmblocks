@@ -1,5 +1,5 @@
 // Ändere diese Datei, um zu ändern, was die Befehle in deiner Statusleiste ausgeben, und kompiliere sie erneut mit dem Befehl "make".
-// ##TODO 2025-01-16 Hintergrundbilder sollen sich ändern
+// ##TODO 2025-01-16 Hintergrundbilder sollen sich automatisch ändern
 // Aktualisierungssignal muss unterschiedlich sein!
 
 static const Block blocks[] = {
@@ -8,7 +8,7 @@ static const Block blocks[] = {
     {"",    "sb-music",                     1,                  7},
     {"",    "sb-yt",                        0,                  28},
     {"",    "sb-mailbox",                   600,                20},
-    {"",   "sb-news",                      600,                8},
+    {" ",   "sb-news",                      600,                8},
 /*  {"",    "sb-backup",                    60,                 2},     */
     {" ",  "sb-pacpackages",               0,                  5},
 /*  {"",    "sb-tasks",                     10,                 6},     */
@@ -32,7 +32,8 @@ static const Block blocks[] = {
     {"",    "sb-clock",                     60,                 26},
     {"",    "sb-help-icon",                 0,                  3},
 /*  {"",    "sb-price btc Bitcoin  21",    9000,               12},    */
-    {"",    "sb-price xmr Monero  24",     9000,               10},
+/*  {"",    "sb-price xmr Monero  24",     9000,               10},    */
+/*  {"󰯈 ",  "sb-tomb",                      0,                  33},    */
 /*  {"",    "sb-price eth Ethereum  23",   9000,               11},    */
 /*  {"",    "sb-price xmr-btc \"Monero to Bitcoin\"  25",	9000,	9}, */
 };
