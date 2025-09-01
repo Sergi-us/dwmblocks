@@ -6,11 +6,11 @@ static const Block blocks[] = {
 /* Symbol */ /* Befehl */               /* Intervall */     /* Aktualisierungssignal */
     {"",    "cat /tmp/recordingicon 2>/dev/null",   1,          1},
     {"",    "sb-music",                     1,                  7},
-    {"",    "sb-yt",                        0,                  28},
+/*  {"",    "sb-yt",                        0,                  28},    */
     {"",    "sb-mailbox",                   600,                20},
-    {" ",   "sb-news",                      600,                8},
+/*  {" ",   "sb-news",                      600,                8},    */
 /*  {"",    "sb-backup",                    60,                 2},     */
-    {" ",  "sb-pacpackages",               0,                  5},
+/*  {" ",  "sb-pacpackages",               0,                  5},     */
 /*  {"",    "sb-tasks",                     10,                 6},     */
 /*  {"",    "sb-torrent",                   20,                 13},    */
 /*  {"",    "sb-disk",                      10,                 16},    */
@@ -20,13 +20,13 @@ static const Block blocks[] = {
     {"",    "sb-volume",                    60,                 21},
 /*  {"",    "sb-kbselect",                  0,                  25},    */
 /*  {"",    "sb-iplocate",                  120,                27},    */
-    {"",    "sb-xsct",                      3600,               30},
-    {"",    "sb-bluetooth",                 0,                  31},
+/*  {"",    "sb-xsct",                      3600,               30},    */
+/*  {"",    "sb-bluetooth",                 0,                  31},    */
     {"",    "sb-hintergrund",               0,                  29},
-    {"",    "sb-ram",                       10,                 14},
-    {"",    "sb-cpu",                       10,                 15},
-    {"",    "sb-battery",                   60,                 22},
-    {"",    "sb-nettraf",                   1,                  24},
+/*  {"",    "sb-ram",                       10,                 14},    */
+/*  {"",    "sb-cpu",                       10,                 15},    */
+/*  {"",    "sb-battery",                   60,                 22},    */
+/*  {"",    "sb-nettraf",                   1,                  24},    */
     {"",    "sb-internet",                  5,                  23},
 /*  {"",    "sb-moonphase",                 18000,              4},     */
     {"",    "sb-clock",                     60,                 26},
